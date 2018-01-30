@@ -20,4 +20,34 @@ sequelize
     console.error('Unable to connect to the database:', err);
   });
 
+const User = sequelize.define('user', {
+  firstName: {
+    type: Sequelize.STRING
+  },
+  lastName: {
+    type: Sequelize.STRING
+  },
+  birthdate: {
+    type: Sequelize.DATE
+  }
+});
+
+//create table
+router.get('/tables', (req, res, next) => {
+  User.sync({
+      force: true
+    })
+    .then(() => {
+      res.send({
+        message: 'Table created successfully.'
+      });
+    })
+    .catch(err => {
+      res.send({
+        message: 'Unable create table',
+        err
+      });
+    });
+});
+
 module.exports = router;
