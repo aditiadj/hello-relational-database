@@ -50,4 +50,23 @@ router.get('/tables', (req, res, next) => {
     });
 });
 
+// GET all data from table
+router.get('/', (req, res, next) => {
+  User.findAll()
+    .then(users => {
+      res.send(JSON.parse(JSON.stringify(users)))
+    })
+});
+
+// GET one data by id from table
+router.get('/:id', (req, res, next) => {
+  User.findById(
+      req.params.id
+    )
+    .then(users => {
+      res.send(JSON.parse(JSON.stringify(users)))
+    })
+});
+
+
 module.exports = router;
