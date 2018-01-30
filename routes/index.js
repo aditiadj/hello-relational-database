@@ -88,4 +88,28 @@ router.post('/', (req, res, next) => {
     });
 });
 
+// UPDATE data
+router.put('/:id', (req, res, next) => {
+  User.update({
+      firstName: req.body.firstName,
+      lastName: req.body.lastName,
+      birthdate: req.body.birthdate
+    }, {
+      where: {
+        id: req.params.id
+      }
+    })
+    .then(() => {
+      res.send({
+        message: 'Update data successfully.'
+      });
+    })
+    .catch(err => {
+      res.send({
+        message: 'Unable update data',
+        err
+      });
+    });
+});
+
 module.exports = router;
