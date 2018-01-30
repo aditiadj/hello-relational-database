@@ -68,5 +68,24 @@ router.get('/:id', (req, res, next) => {
     })
 });
 
+// POST data into table
+router.post('/', (req, res, next) => {
+  User.create({
+      firstName: req.body.firstName,
+      lastName: req.body.lastName,
+      birthdate: req.body.birthdate
+    })
+    .then(() => {
+      res.send({
+        message: 'Data created successfully.'
+      });
+    })
+    .catch(err => {
+      res.send({
+        message: 'Unable create data',
+        err
+      });
+    });
+});
 
 module.exports = router;
