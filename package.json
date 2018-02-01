@@ -7,14 +7,16 @@
     "dev": "node-dev ./bin/www"
   },
   "dependencies": {
-    "body-parser": "~1.18.2",
+    "body-parser": "^1.18.2",
     "cookie-parser": "~1.4.3",
     "debug": "~2.6.9",
     "express": "~4.15.5",
+    "express-generator": "^4.15.5",
     "jade": "~1.11.0",
     "morgan": "~1.9.0",
     "mysql": "^2.15.0",
     "mysql2": "^1.5.1",
+    "node-dev": "^3.1.3",
     "sequelize": "^4.32.2",
     "serve-favicon": "~2.4.5"
   },
@@ -23,17 +25,17 @@
   "devDependencies": {},
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/agtamasmiftahul/hello-relational-database.git"
+    "url": "git+https://github.com/aditiadj/hello-relational-database.git"
   },
   "keywords": [
     "sequelize",
     "nodejs",
     "express"
   ],
-  "author": "agtamasmiftahul37@gmail.com",
+  "author": "aditiadarmadij@gmail.com",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/agtamasmiftahul/hello-relational-database/issues"
+    "url": "https://github.com/aditiadj/hello-relational-database/issues"
   },
-  "homepage": "https://github.com/agtamasmiftahul/hello-relational-database#readme"
+  "homepage": "https://github.com/aditiadj/hello-relational-database#readme"
 }

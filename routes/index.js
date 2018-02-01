@@ -4,7 +4,7 @@ var router = express.Router();
 var Sequelize = require("sequelize");
 
 //Setting up the config
-var sequelize = new Sequelize('personal_information', 'root', 'supermanvsthor', {
+var sequelize = new Sequelize('information', 'root', '123456', {
   host: "127.0.0.1",
   port: 3306,
   dialect: 'mysql'
@@ -32,10 +32,12 @@ const User = sequelize.define('user', {
   }
 });
 
+//CREATE TABLE users (id VARCHAR(17), firstName VARCHAR(20), lastName VARCHAR(20), birthdate DATE, PRIMARY KEY (id));
+
 //create table
 router.get('/tables', (req, res, next) => {
-  User.sync({
-      force: true
+  User.sync({ //create user
+      force: true //drop table before
     })
     .then(() => {
       res.send({
